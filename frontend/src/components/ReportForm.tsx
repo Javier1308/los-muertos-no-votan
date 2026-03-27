@@ -22,9 +22,6 @@ const schema = z
     parentesco: z.enum(['familiar', 'amigo', 'conocido'], {
       errorMap: () => ({ message: 'Selecciona una opción' }),
     }),
-    razon: z.enum(['discapacidad', 'fallecido'], {
-      errorMap: () => ({ message: 'Selecciona una opción' }),
-    }),
   })
   .refine(data => data.dniDenunciante !== data.dniDenunciado, {
     message: 'El DNI del denunciado no puede ser igual al tuyo',
@@ -124,7 +121,7 @@ export function ReportForm({ onSuccess, onError }: ReportFormProps) {
           {...register('dniDenunciante')}
         />
         <InputField
-          label="DNI del denunciado"
+          label="DNI del fallecido"
           type="text"
           inputMode="numeric"
           maxLength={8}
@@ -144,30 +141,17 @@ export function ReportForm({ onSuccess, onError }: ReportFormProps) {
         {...register('mesaVotacion')}
       />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <SelectField
-          label="¿Qué relación tienes con el denunciado?"
-          required
-          placeholder="Selecciona parentesco"
-          error={errors.parentesco?.message}
-          {...register('parentesco')}
-        >
-          <option value="familiar">Familiar</option>
-          <option value="amigo">Amigo/a</option>
-          <option value="conocido">Conocido/a</option>
-        </SelectField>
-
-        <SelectField
-          label="Razón de inhabilitación"
-          required
-          placeholder="Selecciona razón"
-          error={errors.razon?.message}
-          {...register('razon')}
-        >
-          <option value="fallecido">Fallecido/a</option>
-          <option value="discapacidad">Discapacidad</option>
-        </SelectField>
-      </div>
+      <SelectField
+        label="¿Qué relación tienes con el fallecido?"
+        required
+        placeholder="Selecciona parentesco"
+        error={errors.parentesco?.message}
+        {...register('parentesco')}
+      >
+        <option value="familiar">Familiar</option>
+        <option value="amigo">Amigo/a</option>
+        <option value="conocido">Conocido/a</option>
+      </SelectField>
 
       <div className="pt-2">
         <button

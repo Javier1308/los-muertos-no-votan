@@ -25,7 +25,6 @@ async def create_report(
         dni_denunciado=report_data.dni_denunciado,
         mesa_votacion=report_data.mesa_votacion,
         parentesco=report_data.parentesco.value,
-        razon=report_data.razon.value,
         ip_address=ip,
     )
 

@@ -44,7 +44,7 @@ export default function App() {
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center gap-3">
           <PeruFlag />
           <span className="font-bold text-gray-900 text-lg tracking-tight">
-            Los Muertos <span className="text-brand-red">NO</span> Votan
+            LOS MUERTOS <span className="text-brand-red">NO</span> VOTAN
           </span>
         </div>
       </header>
@@ -52,7 +52,7 @@ export default function App() {
       {/* Hero */}
       <section className="bg-gray-900 text-white py-14 px-4">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-brand-red/20 text-brand-red-light border border-brand-red/30 rounded-full px-4 py-1.5 text-sm font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 bg-brand-red/20 text-brand-red-light border border-brand-red/30 rounded-full px-4 py-1.5 text-base font-semibold mb-6">
             <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
             Denuncia ciudadana
           </div>
@@ -60,8 +60,7 @@ export default function App() {
             Reporta irregularidades en el padrón electoral
           </h1>
           <p className="text-gray-300 text-lg leading-relaxed">
-            Si conoces a una persona fallecida o con discapacidad que aparece habilitada
-            para votar, repórtalo aquí. Tu denuncia ayuda a proteger la integridad electoral.
+            Ningún fallecido debe estar habilitado para votar.
           </p>
         </div>
       </section>
@@ -142,7 +141,7 @@ export default function App() {
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
           <div className="flex items-center gap-2">
             <PeruFlag />
-            <span className="font-semibold text-white">Los Muertos NO Votan</span>
+            <span className="font-semibold text-white">LOS MUERTOS NO VOTAN</span>
           </div>
           <p>Plataforma ciudadana por la integridad electoral — Perú</p>
         </div>

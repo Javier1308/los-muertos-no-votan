@@ -1,6 +1,5 @@
 import re
 from datetime import datetime
-from enum import Enum
 from uuid import UUID
 
 from pydantic import BaseModel, field_validator
@@ -12,17 +11,11 @@ class Parentesco(str, Enum):
     conocido = "conocido"
 
 
-class Razon(str, Enum):
-    discapacidad = "discapacidad"
-    fallecido = "fallecido"
-
-
 class ReportCreate(BaseModel):
     dni_denunciante: str
     dni_denunciado: str
     mesa_votacion: str
     parentesco: Parentesco
-    razon: Razon
 
     @field_validator("dni_denunciante", "dni_denunciado")
     @classmethod
