@@ -1,14 +1,20 @@
-import type { ReportFormData, ReportResponse, ApiError } from '../types/report';
+import type { ReportResponse, ApiError } from '../types/report';
 
 const API_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:8000/api/v1';
 
-export async function submitReport(data: ReportFormData): Promise<ReportResponse> {
+interface SubmitReportData {
+  dniDenunciante: string;
+  dniDenunciado: string;
+  mesaVotacion: string;
+  parentesco: 'familiar' | 'amigo' | 'conocido';
+}
+
+export async function submitReport(data: SubmitReportData): Promise<ReportResponse> {
   const payload = {
     dni_denunciante: data.dniDenunciante,
     dni_denunciado: data.dniDenunciado,
     mesa_votacion: data.mesaVotacion,
     parentesco: data.parentesco,
-    razon: data.razon,
   };
 
   const res = await fetch(`${API_URL}/reports`, {
