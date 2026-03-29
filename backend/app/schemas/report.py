@@ -47,3 +47,21 @@ class ReportResponse(BaseModel):
     created_at: datetime
 
     model_config = {"from_attributes": True}
+
+
+class ReportAdmin(BaseModel):
+    id: UUID
+    dni_denunciante: str
+    dni_denunciado: str
+    mesa_votacion: str
+    parentesco: str
+    ip_address: str | None
+    created_at: datetime
+
+    model_config = {"from_attributes": True}
+
+
+class AdminStatsResponse(BaseModel):
+    total: int
+    por_parentesco: dict[str, int]
+    por_mesa: dict[str, int]

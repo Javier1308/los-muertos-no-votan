@@ -7,7 +7,7 @@ from slowapi.errors import RateLimitExceeded
 from app.config import settings
 from app.database import engine
 from app.middleware.rate_limiter import limiter, rate_limit_exceeded_handler
-from app.routers import reports
+from app.routers import reports, admin
 
 
 @asynccontextmanager
@@ -52,6 +52,7 @@ async def security_headers_middleware(request: Request, call_next):
 
 
 app.include_router(reports.router, prefix="/api/v1")
+app.include_router(admin.router, prefix="/api/v1")
 
 
 @app.get("/health", tags=["health"])
