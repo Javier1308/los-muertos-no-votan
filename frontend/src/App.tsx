@@ -68,7 +68,7 @@ export default function App() {
       {/* Wave divider */}
       <div className="bg-gray-900">
         <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="block">
-          <path d="M0 48L1440 48L1440 0C1200 40 960 48 720 48C480 48 240 40 0 0L0 48Z" fill="#f9fafb" />
+          <path d="M0 48L1440 48L1440 0C1200 40 960 48 720 48C480 48 240 40 0 0L0 48Z" fill="#f9fafb" stroke="none" />
         </svg>
       </div>
 
